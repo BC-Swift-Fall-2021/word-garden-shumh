@@ -1,24 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WordGarden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kn5-ge-d15">
+                                <rect key="frame" x="8" y="4" width="304" height="31"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUi-4C-gjj">
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="16.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Words Guessed: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zq0-Ij-fho">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="16.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words Remaining: 0 " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTh-z3-jWq">
+                                                <rect key="frame" x="187.5" y="0.0" width="116.5" height="16.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="116.5" id="dmo-VI-bvO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WM8-3s-nAR">
+                                        <rect key="frame" x="0.0" y="16.5" width="304" height="14.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Words Missed: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CI-i7-hf6">
+                                                <rect key="frame" x="0.0" y="0.0" width="203.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words in Game: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewa-c6-vTA">
+                                                <rect key="frame" x="203.5" y="0.0" width="100.5" height="14.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100.5" id="Trb-CB-nDc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="3CI-i7-hf6" firstAttribute="baseline" secondItem="Ewa-c6-vTA" secondAttribute="firstBaseline" id="OCu-J7-IU1"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="EFb-QU-Dso"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW MANY GUESSES TO UNCOVER THE HIDDEN WORD?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csz-0f-XqP">
+                                <rect key="frame" x="16" y="43" width="288" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="qO5-9e-HpP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_ _ _ _ _" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngN-xE-pn6">
+                                <rect key="frame" x="16" y="131" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="QEV-gP-Gbb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TML-WR-GIy">
+                                <rect key="frame" x="70" y="160" width="180" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xOT-yS-fDE">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="dJy-Vq-9Zz"/>
+                                            <constraint firstAttribute="width" constant="30" id="pzo-AS-xOQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgj-HC-cwG">
+                                        <rect key="frame" x="30" y="0.0" width="150" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="4bf-F7-zon"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="AQf-7e-enq"/>
+                                        </constraints>
+                                        <state key="normal" title="Guess a Letter"/>
+                                        <connections>
+                                            <action selector="guessLetterButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="06K-ML-bLg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've Made Zero Guesses" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLQ-Lf-YNj">
+                                <rect key="frame" x="16" y="240" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="flower8" translatesAutoresizingMaskIntoConstraints="NO" id="0g4-Pn-web">
+                                <rect key="frame" x="0.0" y="268.5" width="320" height="299.5"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rt-79-fPW">
+                                <rect key="frame" x="115" y="202" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Q7c-KZ-bIg"/>
+                                    <constraint firstAttribute="height" constant="30" id="Yad-fk-yfg"/>
+                                </constraints>
+                                <state key="normal" title="Play Again"/>
+                                <connections>
+                                    <action selector="playAgainButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sse-ya-lhx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Csz-0f-XqP" secondAttribute="trailing" constant="16" id="6bK-MJ-yuv"/>
+                            <constraint firstItem="ngN-xE-pn6" firstAttribute="top" secondItem="Csz-0f-XqP" secondAttribute="bottom" constant="8" id="8aZ-KG-uDM"/>
+                            <constraint firstItem="jLQ-Lf-YNj" firstAttribute="top" secondItem="7rt-79-fPW" secondAttribute="bottom" constant="8" id="8kV-Wj-Shv"/>
+                            <constraint firstItem="0g4-Pn-web" firstAttribute="top" secondItem="jLQ-Lf-YNj" secondAttribute="bottom" constant="8" id="96e-OL-EGM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0g4-Pn-web" secondAttribute="trailing" id="GfO-Dd-laE"/>
+                            <constraint firstItem="TML-WR-GIy" firstAttribute="centerX" secondItem="ngN-xE-pn6" secondAttribute="centerX" id="GvM-6r-Xnb"/>
+                            <constraint firstItem="jLQ-Lf-YNj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="J70-ch-oqU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jLQ-Lf-YNj" secondAttribute="trailing" constant="16" id="Nca-1N-G56"/>
+                            <constraint firstItem="TML-WR-GIy" firstAttribute="top" secondItem="ngN-xE-pn6" secondAttribute="bottom" constant="8" id="QhL-tK-NvX"/>
+                            <constraint firstItem="ngN-xE-pn6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Sh5-lt-qLd"/>
+                            <constraint firstItem="7rt-79-fPW" firstAttribute="top" secondItem="TML-WR-GIy" secondAttribute="bottom" constant="8" id="Tf4-JG-g5E"/>
+                            <constraint firstItem="7rt-79-fPW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UYs-p8-AE4"/>
+                            <constraint firstItem="ngN-xE-pn6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VIv-Eg-D5K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kn5-ge-d15" secondAttribute="trailing" constant="8" id="acC-h9-bbU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0g4-Pn-web" secondAttribute="bottom" id="bYr-Md-0jf"/>
+                            <constraint firstItem="Kn5-ge-d15" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="eod-S4-CCN"/>
+                            <constraint firstItem="Csz-0f-XqP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="mu9-YK-dyQ"/>
+                            <constraint firstItem="Kn5-ge-d15" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="pig-KY-9tY"/>
+                            <constraint firstItem="TML-WR-GIy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sEH-oL-ReS"/>
+                            <constraint firstItem="Csz-0f-XqP" firstAttribute="top" secondItem="Kn5-ge-d15" secondAttribute="bottom" constant="8" id="t97-z1-qzL"/>
+                            <constraint firstItem="TML-WR-GIy" firstAttribute="centerX" secondItem="7rt-79-fPW" secondAttribute="centerX" id="ub2-bK-rXE"/>
+                            <constraint firstItem="0g4-Pn-web" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vmI-LM-xCB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ngN-xE-pn6" secondAttribute="trailing" constant="16" id="zBX-FW-n0R"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="flowerImageView" destination="0g4-Pn-web" id="y0I-oB-CaV"/>
+                        <outlet property="gameStatusMessageLabel" destination="jLQ-Lf-YNj" id="2vL-sm-gU9"/>
+                        <outlet property="guessLetterButton" destination="cgj-HC-cwG" id="7eX-e0-5cP"/>
+                        <outlet property="guessedLetterField" destination="xOT-yS-fDE" id="gQu-AG-zdn"/>
+                        <outlet property="playAgainButton" destination="7rt-79-fPW" id="gPq-kL-lBA"/>
+                        <outlet property="wordsBeingRevealedLabel" destination="Csz-0f-XqP" id="0LY-jv-gCX"/>
+                        <outlet property="wordsGuessedLabel" destination="3CI-i7-hf6" id="Aj5-Cq-7tx"/>
+                        <outlet property="wordsInGameLabel" destination="Ewa-c6-vTA" id="Kf9-q4-IRR"/>
+                        <outlet property="wordsMissedLabel" destination="3CI-i7-hf6" id="CaM-i5-t8H"/>
+                        <outlet property="wordsRemainingLabel" destination="xTh-z3-jWq" id="ZA6-cw-B17"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="121.875" y="118.30985915492958"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="flower8" width="613.5" height="1082"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
