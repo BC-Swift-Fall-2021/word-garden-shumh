@@ -42,7 +42,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func guessLetterFieldChange(_ sender: UITextField) {
-        let text = guessedLetterField.text!
+        var text = guessedLetterField.text!
+        if let lastChar = text.last {
+            text = String(lastChar)
+        } else {
+            text = ""
+        }
+        guessedLetterField.text = text
         guessLetterButton.isEnabled = !(text.isEmpty)
     }
     
