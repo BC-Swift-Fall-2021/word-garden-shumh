@@ -76,7 +76,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_ _ _ _ _" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngN-xE-pn6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngN-xE-pn6">
                                 <rect key="frame" x="16" y="131" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="QEV-gP-Gbb"/>
@@ -169,7 +169,7 @@
                         <outlet property="guessLetterButton" destination="cgj-HC-cwG" id="7eX-e0-5cP"/>
                         <outlet property="guessedLetterField" destination="xOT-yS-fDE" id="gQu-AG-zdn"/>
                         <outlet property="playAgainButton" destination="7rt-79-fPW" id="gPq-kL-lBA"/>
-                        <outlet property="wordsBeingRevealedLabel" destination="Csz-0f-XqP" id="0LY-jv-gCX"/>
+                        <outlet property="wordBeingRevealedLabel" destination="ngN-xE-pn6" id="uJw-eU-VoA"/>
                         <outlet property="wordsGuessedLabel" destination="3CI-i7-hf6" id="Aj5-Cq-7tx"/>
                         <outlet property="wordsInGameLabel" destination="Ewa-c6-vTA" id="Kf9-q4-IRR"/>
                         <outlet property="wordsMissedLabel" destination="3CI-i7-hf6" id="CaM-i5-t8H"/>
